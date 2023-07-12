@@ -139,7 +139,7 @@ document.addEventListener("alpine:init", () => {
             setTimeout(() => (this.message = ""), 3000);
           } else {
             this.message = "Payment received";
-            this.message = this.username +" , made a successful purchase for your order!";
+            this.message = this.username +" , Order Successful. Thank you so much!";
             setTimeout(() => {
               this.message = "";
               this.cartPizzas = [];
@@ -148,7 +148,7 @@ document.addEventListener("alpine:init", () => {
               this.paymentAmount = 0;
               localStorage["cartId"] = "";
               this.createCart();
-            }, 3000);
+            }, 5000);
           }
         });
       },
