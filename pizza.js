@@ -114,7 +114,6 @@ document.addEventListener("alpine:init", () => {
         }
       },
 
-
       //   Adds Pizza to card
 
       addPizzaToCart(pizzaId) {
@@ -131,6 +130,14 @@ document.addEventListener("alpine:init", () => {
         });
       },
 
+      // trace users historical orders
+      UserHistory() {
+        axios.get('https://pizza-api.projectcodex.net/api/pizza-cart/username/${this.username}')
+          .then((result) => {
+            console.log(result.data)
+          })
+      },
+      
       payForCart() {
         // alert("Pay Now :" +this.paymentAmount);
 
@@ -141,7 +148,7 @@ document.addEventListener("alpine:init", () => {
           } else {
             this.message = "Payment received";
             this.message = this.username + " , Order Successful. Thank you so much!";
-            const change = result.data.change; 
+            const change = result.data.change;
             this.message += ' Here is your change: R';
             setTimeout(() => {
               this.message = "";

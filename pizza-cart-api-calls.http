@@ -8,6 +8,10 @@ GET https://pizza-api.projectcodex.net/api/pizzas
 
 GET https://pizza-api.projectcodex.net/api/pizza-cart/create?username=Nkosingiphile08
 
+### Access user historical orders
+
+GET https://pizza-api.projectcodex.net/api/pizza-cart/username/Nkosingiphile08
+
 ### get a cart
 
 GET https://pizza-api.projectcodex.net/api/pizza-cart/ySTxAFwiQw/get

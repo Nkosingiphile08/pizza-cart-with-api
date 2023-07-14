@@ -8,7 +8,7 @@
 body {
     background-image: url(images/pizza-2.png);
     background-color: rgb(164, 135, 99);
-    color:black;
+    color: black;
 }
 
 .container {
@@ -21,11 +21,12 @@ body {
 
     margin: 0.5em;
     padding: 0.5em;
-    width: 20em;
+    /* width: 20em; */
     border-radius: 0.25em;
     display: inline-block;
-    background-color: #d8db2e;
+    background-color: #a7b3c8;
     color: blue;
+    text-align: center;
 }
 
 .btn {
@@ -35,7 +36,7 @@ body {
     margin-top: 0.5em;
     padding: 0.5em;
     border-radius: 0.5em;
-    float: right;
+    /* float: right; */
 }
 
 table {
@@ -45,16 +46,19 @@ table {
     margin-right: auto;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid;
 }
 
-td, th {
+td,
+th {
     text-align: lem;
     padding: 1em;
 }
 
-ul li{
+ul li {
     font-size: 20px;
 }
 
@@ -62,33 +66,37 @@ ul li{
     background-color: #d8db2e;
     color: blue;
     display: inline-block;
-    width: 20em;
+    /* width: 20em; */
     margin: 0.5em;
     border-radius: 0.253m;
     padding: 0.5em;
-   
+    flex: 1;
+
+
 }
 
 .medium_pizza {
     background-color: #d8db2e;
     color: blue;
     display: inline-block;
-    width: 20em;
+    /* width: 20em; */
     margin: 0.5em;
     border-radius: 0.253m;
     padding: 0.5em;
-   
+    flex: 1;
+
 }
 
 .large_pizza {
     background-color: #d8db2e;
     color: blue;
     display: inline-block;
-    width: 20em;
+    /* width: 20em; */
     margin: 0.5em;
     border-radius: 0.253m;
     padding: 0.5em;
-    
+    flex: 1;
+
 }
 
 @media (min-width: 960px) {
@@ -118,5 +126,3 @@ ul li{
 
     display: none !important;
 }
-
-
