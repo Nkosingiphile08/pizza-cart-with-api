@@ -1,6 +1,6 @@
-pizza API
+# Pizza API
 
-## To use HTTP endpoint install the REST client plugin in VSCODE
+## To use these HTTP endpoint install the REST Client plugin in VSCode.
 
 GET https://pizza-api.projectcodex.net/api/pizzas
 
@@ -22,8 +22,7 @@ Content-Type: application/json
     "cart_code": "kehv4PcRKJ",
     "pizza_id": 10
 }
-
-
+  
 ### Add a pizza in the cart
 
 POST https://pizza-api.projectcodex.net/api/pizza-cart/add

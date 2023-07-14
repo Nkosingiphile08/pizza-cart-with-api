@@ -11,7 +11,7 @@ document.addEventListener("alpine:init", () => {
       message: "",
       login() {
         if (this.username.length > 2) {
-            localStorage["username"] = this.username;
+          localStorage["username"] = this.username;
           this.createCart();
         } else {
           alert("username is too short");
@@ -94,9 +94,9 @@ document.addEventListener("alpine:init", () => {
 
 
         const storedUsername = localStorage['username'];
-        if(storedUsername){
+        if (storedUsername) {
 
-            
+
         }
         axios
           .get("https://pizza-api.projectcodex.net/api/pizzas")
@@ -113,6 +113,7 @@ document.addEventListener("alpine:init", () => {
           });
         }
       },
+
 
       //   Adds Pizza to card
 
@@ -139,7 +140,9 @@ document.addEventListener("alpine:init", () => {
             setTimeout(() => (this.message = ""), 3000);
           } else {
             this.message = "Payment received";
-            this.message = this.username +" , Order Successful. Thank you so much!";
+            this.message = this.username + " , Order Successful. Thank you so much!";
+            const change = result.data.change; 
+            this.message += ' Here is your change: R';
             setTimeout(() => {
               this.message = "";
               this.cartPizzas = [];
