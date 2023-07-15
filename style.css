@@ -8,7 +8,7 @@
 body {
     background-image: url(images/pizza-2.png);
     background-color: rgb(164, 135, 99);
-    color: black;
+    color:black;
 }
 
 .container {
@@ -46,19 +46,16 @@ table {
     margin-right: auto;
 }
 
-table,
-th,
-td {
+table, th, td {
     border: 1px solid;
 }
 
-td,
-th {
+td, th {
     text-align: lem;
     padding: 1em;
 }
 
-ul li {
+ul li{
     font-size: 20px;
 }
 
@@ -72,7 +69,7 @@ ul li {
     padding: 0.5em;
     flex: 1;
 
-
+   
 }
 
 .medium_pizza {
@@ -84,7 +81,7 @@ ul li {
     border-radius: 0.253m;
     padding: 0.5em;
     flex: 1;
-
+   
 }
 
 .large_pizza {
@@ -96,7 +93,7 @@ ul li {
     border-radius: 0.253m;
     padding: 0.5em;
     flex: 1;
-
+    
 }
 
 @media (min-width: 960px) {

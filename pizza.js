@@ -137,7 +137,7 @@ document.addEventListener("alpine:init", () => {
             console.log(result.data)
           })
       },
-      
+
       payForCart() {
         // alert("Pay Now :" +this.paymentAmount);
 
@@ -165,3 +165,10 @@ document.addEventListener("alpine:init", () => {
     };
   });
 });
+
+function handleLogin() {
+  // Code for handling login functionality...
+
+  // Set the isLoggedIn value to true
+  Alpine.$data.pizzaCart.isLoggedIn = true;
+}
