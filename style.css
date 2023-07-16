@@ -27,6 +27,7 @@ body {
     background-color: #a7b3c8;
     color: blue;
     text-align: center;
+    
 }
 
 .btn {
@@ -40,7 +41,7 @@ body {
 }
 
 table {
-
+    
     border-collapse: collapse;
     width: 80%;
     margin-right: auto;

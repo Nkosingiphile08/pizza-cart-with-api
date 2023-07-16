@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users historical orders</title>
+</head>
+
+<body>
+    <div x-data="historicalWidget">
+        <div class="container">
+            <br>
+
+            <div>
+                username: <span x-text="username"></span>
+                <div class="text-center">
+                    <h3>Users historical Carts</h3>
+
+                    <template x for="cart in showUserHistory">
+                        <p x-text="cart.cart_code"></p>
+                        <p x-text="cart.username"></p>
+                        <p x-text="cart.status"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <script src="history.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
