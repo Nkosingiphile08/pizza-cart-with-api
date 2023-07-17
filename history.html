@@ -13,11 +13,16 @@
             <br>
 
             <div>
-                username: <span x-text="username"></span>
+                username: <span x-text="localStorage['username']"></span>
+            </div>
+                <div>
+
+                
                 <div class="text-center">
                     <h3>Users historical Carts</h3>
 
-                    <template x for="cart in showUserHistory">
+                <template x-for="cart in userCartContent">
+                    <div>
                         <p x-text="cart.cart_code"></p>
                         <p x-text="cart.username"></p>
                         <p x-text="cart.status"></p>
@@ -26,7 +31,9 @@
             </div>
         </div>
     </div>
-    <script src="history.js"></script>
+    <script src="history.js" defer></script>    
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="pizza.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 

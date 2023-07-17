@@ -2,15 +2,22 @@ document.addEventListener("alpine:init", () => {
   Alpine.data("pizzaCart", () => {
     return {
       title: "Pizza cart API",
+      enterName: "",
       pizzas: [],
-      username: "",
+      username: '',
       cartId: "",
       cartPizzas: [],
       paymentAmount: 0.0,
       cartTotal: 0.0,
       message: "",
+      failureMessage: "",
+      userCartContent: '',
+
+
+      
       login() {
-        if (this.username.length > 2) {
+        if (this.enterName.length > 2) {
+          this.username = this.enterName;
           localStorage["username"] = this.username;
           this.createCart();
         } else {
@@ -86,7 +93,7 @@ document.addEventListener("alpine:init", () => {
         this.getCart().then((result) => {
           const cartData = result.data;
           this.cartPizzas = cartData.pizzas;
-          this.cartTotal = cartData.total.toFixed(2);
+          this.cartTotal = cartData.total;
         });
       },
 
@@ -105,12 +112,14 @@ document.addEventListener("alpine:init", () => {
             // console.log(result.data);
             this.pizzas = result.data.pizzas;
             //code here..
+            this.UserHistory()
           });
 
         if (!this.cartId) {
-          this.createCart().then(() => {
-            this.showCartData();
-          });
+          this.createCart()
+          // then(() => {
+          this.showCartData();
+          // });
         }
       },
 
@@ -132,8 +141,10 @@ document.addEventListener("alpine:init", () => {
 
       // trace users historical orders
       UserHistory() {
-        axios.get('https://pizza-api.projectcodex.net/api/pizza-cart/username/${this.username}')
+        axios.get(`https://pizza-api.projectcodex.net/api/pizza-cart/username/${this.username}`)
           .then((result) => {
+            this.userCartContent = result.data;
+                        console.log(this.userCartContent);
             console.log(result.data)
           })
       },
@@ -143,13 +154,14 @@ document.addEventListener("alpine:init", () => {
 
         this.pay(this.paymentAmount).then((result) => {
           if (result.data.status == "failure") {
-            this.message = result.data.message;
-            setTimeout(() => (this.message = ""), 3000);
-          } else {
+            this.failureMessage = result.data.message;
+            setTimeout(() => (this.failureMessage = ""), 3000);
+          } 
+          else {
             this.message = "Payment received";
-            this.message = this.username + " , Order Successful. Thank you so much!";
-            const change = result.data.change;
-            this.message += ' Here is your change: R';
+            this.message = `${this.username}, Order Successful. Thank you so much Enjoy your pizza!!!`;
+            const change = this.paymentAmount - this.cartTotal;
+            this.message += ' Here is your change: R' + change.toFixed(2);
             setTimeout(() => {
               this.message = "";
               this.cartPizzas = [];

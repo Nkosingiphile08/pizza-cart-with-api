@@ -7,12 +7,12 @@
 
 body {
     background-image: url(images/pizza-2.png);
-    background-color: rgb(164, 135, 99);
+    background-color: gainsboro;
     color:black;
 }
 
 .container {
-    background-color: rgb(164, 135, 99);
+    background-color:grey;
     width: 100%;
     margin: auto;
 }
@@ -40,29 +40,29 @@ body {
     /* float: right; */
 }
 
-table {
+/* table {
     
     border-collapse: collapse;
     width: 80%;
     margin-right: auto;
-}
+} */
 
-table, th, td {
+/* table, th, td {
     border: 1px solid;
-}
+} */
 
-td, th {
+/* td, th {
     text-align: lem;
     padding: 1em;
-}
+} */
 
 ul li{
     font-size: 20px;
 }
 
 .small_pizza {
-    background-color: #d8db2e;
-    color: blue;
+    background-color: gainsboro;
+    color: black;
     display: inline-block;
     /* width: 20em; */
     margin: 0.5em;
@@ -74,8 +74,8 @@ ul li{
 }
 
 .medium_pizza {
-    background-color: #d8db2e;
-    color: blue;
+    background-color:gainsboro;
+    color:black;
     display: inline-block;
     /* width: 20em; */
     margin: 0.5em;
@@ -86,8 +86,8 @@ ul li{
 }
 
 .large_pizza {
-    background-color: #d8db2e;
-    color: blue;
+    background-color:gainsboro;
+    color: black;
     display: inline-block;
     /* width: 20em; */
     margin: 0.5em;
@@ -107,10 +107,15 @@ ul li{
 .message {
 
     padding: 1em;
+    color: rgb(7, 109, 7);
+}
+.errMessage {
+
+    padding: 1em;
     color: rgb(123, 14, 14);
 }
 
-.cart {
+/* .cart {
 
     display: flex;
 }
@@ -118,7 +123,7 @@ ul li{
 .cart div {
 
     flex: 1em;
-}
+} */
 
 [x-cloak] {
 
