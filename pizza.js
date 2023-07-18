@@ -4,7 +4,7 @@ document.addEventListener("alpine:init", () => {
       title: "Pizza cart API",
       enterName: "",
       pizzas: [],
-      username: '',
+      username: "",
       cartId: "",
       cartPizzas: [],
       paymentAmount: 0.0,
@@ -159,7 +159,7 @@ document.addEventListener("alpine:init", () => {
           } 
           else {
             this.message = "Payment received";
-            this.message = `${this.username}, Order Successful. Thank you so much Enjoy your pizza!!!`;
+            this.message = `${this.username}, Order Successful. Thank you so much-Enjoy your pizza!!!`;
             const change = this.paymentAmount - this.cartTotal;
             this.message += ' Here is your change: R' + change.toFixed(2);
             setTimeout(() => {
@@ -178,9 +178,9 @@ document.addEventListener("alpine:init", () => {
   });
 });
 
-function handleLogin() {
+//function handleLogin() {
   // Code for handling login functionality...
 
   // Set the isLoggedIn value to true
-  Alpine.$data.pizzaCart.isLoggedIn = true;
-}
+  //Alpine.$data.pizzaCart.isLoggedIn = true;
+//}

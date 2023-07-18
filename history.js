@@ -16,7 +16,7 @@ document.addEventListener('alpine:init', () => {
                     })
                     
             },
-
+ 
             UserHistory() {
                 axios.get(`https://pizza-api.projectcodex.net/api/pizza-cart/username/${this.username}`)
                     .then((result) => {

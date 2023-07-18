@@ -11,7 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="pizza.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- <script src="history.js"></script> -->
     <!-- <script src="history.html"></script> -->
 </head>
@@ -32,17 +33,22 @@
                     <strong>Total Pizza Available : </strong> <strong x-text="pizzas.length"
                         x-show="username  && cartId"></strong>
                 </div>
-                <a class="btn btn-primary" href="history.html" x-show="username &&  cartId"><strong>Order history</strong></a>
+                <a class="btn btn-secondary" href="history.html" x-show="username &&  cartId"><strong>Order
+                        history</strong></a>
             </div>
             <br>
+
             <!-- Funtionality to our addding button starts here -->
+            <button class="btn btn-secondary" x-on:click="showCartVisibility"><strong>View Cart</strong></button>
+            <br>
+            <br>
             <div x-show="cartTotal>0" class="text-center">
                 <h2>Shopping Pizza cart</h2>
-                
+
                 <div class="message" x-text="message">message here</div>
                 <div class="errMessage" x-text="failureMessage">message here</div>
-  
-                <table class="table table-secondary" >
+
+                <table class="table table-secondary">
                     <thead>
                         <tr>
                             <th>Flavour</th>
@@ -77,74 +83,81 @@
                                 <input x-model="paymentAmount" type="text">
                             </td>
                             <td>
-                                <button class="btn btn-primary" x-on:click="payForCart()">Pay</button>
+                                <button class="btn btn-secondary" x-on:click="payForCart()">Pay</button><br>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <br>
             </div>
         </div>
     </div>
     <br>
-<!--<div x-data="{ isLoggedIn: false, showLogoutAlert: false, logoutConfirmed: false }">
-            <button @click="isLoggedIn = true">Login</button> -->
-            <!--</button>-->
-        <!--</div> --> <!--Login button to the 3 pizza-->
-        
-        <!--3 pizza featured starts here-->
-        <div class="pizzas container" x-show="username && cartId" style="text-align: center;">
-            <div class="pizza small_pizza  d-none d-md-block">
-                <img src="images/pizza-box.png" width="40%">
-                <br>
-                <br>
-                <h2>Parma ham small pizza</h2>
-                <br>
-                <div>
-                   Taste something delicious with parma ham & fresh mozzarella.The pizza with bacon & Italian sausage. 
-                   Pizza with bacon & Italian sausage.  
-                </div>
-                <h3>R39.00</h3>
-                <br>
-                <div x-data>
-                    <button class="btn btn-primary" x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
-                </div>
-            </div>
-            <br>
-            <div class="medium_pizza d-none d-md-block">
-                 <img src="images/pizza2.png" width="40%">
-                <br>
-                <h2>Mushrooms & pepperoni medium pizza</h2>
-                <div>
-                    Something with loads of mozzarella cheese.
-                </div>
-                <h3>R68.00</h3>
-                <div>
+
+    <!--3 pizza featured starts here-->
+    <div class="pizzas container" x-show="username && cartId" style="text-align: center;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="pizza large_pizza d-none d-md-block">
+                    <img src="images/pizza.png" width="40%">
                     <br>
-                    <div x-data>
-                        <button class="btn btn-primary" x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+                    <br>
+                    <h2>Chicken & Mushroom large Pizza</h2>
+                    <br>
+                    <div>
+                        Taste something delicious with parma ham & fresh mozzarella. The pizza with bacon & Italian
+                        sausage. Pizza with bacon & Italian sausage.
+                    </div>
+                    <h3>R104.99</h3>
+                    <br>
+                    <div x-data="{ pizza: { id:1  } }"> <!-- call the ID of the pizza -->
+                        <button class="btn btn-secondary"
+                            x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
                     </div>
                 </div>
-                <br>
             </div>
-            <br>
-            <div class="pizza large_pizza d-none d-md-block">
-                <img src="images/pizza.png" width="40%">
-                <br>
-                <br>
-                <h2>Mozzarella large Pizza</h2>
-                <div>
-                Something with mozzarella & creamy goodness in a bite.Garlic, asiago & oil based pizza
+
+            <div class="col-sm-4">
+                <div class="pizza medium_pizza d-none d-md-block">
+                    <img src="images/pizza2.png" width="40%">
+                    <br>
+                    <br>
+                    <h2>Four Season medium Pizza</h2>
+                    <br>
+                    <div>
+                        Taste something delicious with parma ham & fresh mozzarella. The pizza with bacon & Italian
+                        sausage. Pizza with bacon & Italian sausage.
+                    </div>
+                    <h3>R87.99</h3>
+                    <br>
+                    <div x-data="{ pizza: { id: 11 } }"> <!-- call the ID of the pizza -->
+                        <button class="btn btn-secondary"
+                            x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+                    </div>
                 </div>
-                </ul>
-                <h3>R120.00</h3>
-                <br>
-                <div x-data>
-                    <button class="btn btn-primary" x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="pizza small_pizza d-none d-md-block">
+                    <img src="images/pizza-box.png" width="40%">
+                    <br>
+                    <br>
+                    <h2>Garlic & Mushroom small Pizza</h2>
+                    <br>
+                    <div>
+                        Taste something delicious with parma ham & fresh mozzarella. The pizza with bacon & Italian
+                        sausage. Pizza with bacon & Italian sausage.
+                    </div>
+                    <h3>R47.99</h3>
+                    <br>
+                    <div x-data="{ pizza: { id: 27 } }"> <!-- call the ID of the pizza -->
+                        <button class="btn btn-secondary"
+                            x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--3 pizza featured ends here-->
+    </div> <!--3 pizza featured ends here-->
 
     <!-- Funtionality to our button ends here -->
     <!-- Looping through the pizza starts here -->
@@ -153,11 +166,11 @@
         <table class="table table-secondary">
             <thead>
                 <tr>
-                    <th>img</th>
+                    <th>Img</th>
                     <th>Flavour</th>
                     <th>Size</th>
                     <th>price</th>
-                    <th>buy</th>
+                    <th>Buy</th>
                 </tr>
             </thead>
             <tbody>
@@ -174,7 +187,8 @@
                             </td>
 
                             <td>
-                                <button class="btn btn-primary" x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+                                <button class="btn btn-secondary"
+                                    x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
                             </td>
                         </tr>
                     </template>
@@ -193,7 +207,8 @@
                             </td>
 
                             <td>
-                                <button class="btn btn-primary" x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+                                <button class="btn btn-secondary"
+                                    x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
                             </td>
                         </tr>
                     </template>
@@ -212,13 +227,16 @@
                             </td>
 
                             <td>
-                                <button class="btn btn-primary" x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
+                                <button class="btn btn-secondary"
+                                    x-on:click="addPizzaToCart(pizza.id)"><strong>BUY</strong></button>
                             </td>
                         </tr>
                     </template>
                 </template>
             </tbody>
         </table>
+        <br>
+        <br>
     </div>
 
 </body>
