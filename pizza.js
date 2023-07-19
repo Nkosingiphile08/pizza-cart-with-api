@@ -12,9 +12,48 @@ document.addEventListener("alpine:init", () => {
       message: "",
       failureMessage: "",
       userCartContent: '',
-
+      showFeaturedpizzas: "",
 
       
+      postfeaturedPizzas(pizza) {
+
+        let data = JSON.stringify({
+          "username": this.username,
+          "pizza_id": pizza
+        });
+
+        let config = {
+          method: 'post',
+          maxBodyLength: Infinity,
+          url: 'https://pizza-api.projectcodex.net/api/pizzas/featured',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: data
+        };
+
+        axios.request(config)
+          .then((result) => {
+            console.log(JSON.stringify(result.data));
+          }).then(() => {
+            return this.featuredPizzas()
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+      },
+
+      featuredPizzas() {
+        return axios
+          .get(`https://pizza-api.projectcodex.net/api/pizzas/featured?username=${this.username}`)
+          .then((result) => {
+
+            this.showFeaturedpizzas = result.data;
+
+            console.log(result.data)
+          })
+      },
       login() {
         if (this.enterName.length > 2) {
           this.username = this.enterName;
@@ -111,8 +150,11 @@ document.addEventListener("alpine:init", () => {
             //code here
             // console.log(result.data);
             this.pizzas = result.data.pizzas;
-            //code here..
-            this.UserHistory()
+           
+           
+          }).then(()=>{
+            // this.UserHistory();
+            // this.postfeaturedPizzas(5);
           });
 
         if (!this.cartId) {
@@ -177,10 +219,3 @@ document.addEventListener("alpine:init", () => {
     };
   });
 });
-
-//function handleLogin() {
-  // Code for handling login functionality...
-
-  // Set the isLoggedIn value to true
-  //Alpine.$data.pizzaCart.isLoggedIn = true;
-//}

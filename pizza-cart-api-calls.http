@@ -14,7 +14,7 @@ GET https://pizza-api.projectcodex.net/api/pizza-cart/username/Nkosingiphile08
 
 ### get a cart
 
-GET https://pizza-api.projectcodex.net/api/pizza-cart/ySTxAFwiQw/get
+GET https://pizza-api.projectcodex.net/api/pizza-cart/8iRigRqd0G/get
 
 
 ### Add a pizza in the cart
@@ -23,7 +23,7 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/add
 Content-Type: application/json
 
 {
-    "cart_code": "cweOoUHdbd",
+    "cart_code": "8iRigRqd0G",
     "pizza_id": 17
 }
   
@@ -33,10 +33,12 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/add
 Content-Type: application/json
 
 {
-    "cart_code": "kehv4PcRKJ",
+    "cart_code": "8iRigRqd0G",
     "pizza_id": 11
 }
 
+### Featured pizzas
+POST https://api/pizzas/featured?username=your_Nkosingiphile08
 
 
 ### Remove a pizza in the cart
@@ -45,7 +47,7 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/remove
 Content-Type: application/json
 
 {
-    "cart_code": "kehv4PcRKJ",
+    "cart_code": "8iRigRqd0G",
     "pizza_id": 11
 }
 
@@ -63,8 +65,19 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/pay
 Content-Type: application/json
 
 {
-    "cart_code" : "kehv4PcRKJ",
-    "amount" : 50
+    "cart_code" : "8iRigRqd0G",
+    "amount" : 60
 }
 
+### cart history
 GET https://pizza-api.projectcodex.net/api/pizza-cart/username/Nkosingiphile08
+
+
+POST https://pizza-api.projectcodex.net/api/pizzas/featured 
+{
+	username : "Nkosingiphile08", // Request failed
+    pizza_id : 
+}
+
+### Accessing featured 
+GET https://pizza-api.projectcodex.net/api/pizzas/featured?username=Nkosingiphile08
