@@ -105,11 +105,11 @@
     <br>
 
     <!--3 pizza featured starts here-->
-    <div>
-        <div class="pizzas container" x-show="username && cartId" style="text-align: center;">
-            <template x-for="pizza in showFeaturedpizzas.pizzas">
-                <div class="large_pizza col-md-4 ">
-                    <img src="images/pizza.png" width="40%">
+    <div class=" text-center">
+        <div  x-show="username && cartId">
+        <template x-for="pizza in showFeaturedpizzas.pizzas">
+                <div class="large_pizza col-md-3 ">
+                    <img src="images/pizza.png" width="20%">
                     <br>
                     <br>
                     <h2 x-text="pizza.type"></h2>
@@ -126,6 +126,8 @@
                     </div>
                 </div>
             </template>
+        
+            
         </div>
     </div> <!--3 pizza featured ends here-->
 
@@ -222,7 +224,7 @@
         <br>
     </div>
 
-    <div x-data="{ showLogin: false }" class="footer">
+    <div x-data="{ showLogin: false }" class="footer container">
         <strong>
             <p>&copy; 2023 Your Perfect Pizza. All rights reserved.</p>
             <p>
