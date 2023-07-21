@@ -7,7 +7,6 @@
 
 body {
     background-image: url(images/pizza-1.png);
-    background-color: gainsboro;
     color: black;
 }
 
@@ -25,7 +24,6 @@ body {
     border-radius: 0.25em;
     display: inline-block;
     background-color: #a7b3c8;
-    color: blue;
     text-align: center;
 
 }
@@ -58,6 +56,17 @@ body {
 
 ul li {
     font-size: 20px;
+}
+.pizza {
+
+    margin: 0.5em;
+    padding: 0.5em;
+    /* width: 20em; */
+    border-radius: 0.25em;
+    display: inline-block;
+    background-color: #a7b3c8;
+    text-align: center;
+
 }
 
 .small_pizza {
@@ -93,7 +102,7 @@ ul li {
     margin: 0.5em;
     border-radius: 0.253m;
     padding: 0.5em;
-    flex: 2;
+    flex: 1;
 
 }
 
@@ -103,12 +112,12 @@ ul li {
         display: flex;
         
     }
-}
+} 
 
 .message {
 
     padding: 1em;
-    color: rgb(5, 69, 5);
+    color: rgb(2, 71, 2);
 }
 
 .errMessage {
@@ -158,4 +167,32 @@ ul li {
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+}
+
+.contact_us {
+    background-color: whitesmoke;
+    margin: auto; /* To centers the element horizontally */
+    padding: 1px;
+    border-radius:1px;
+    display: flex;
+    text-align: left;
+    width: 82%;
+}
+
+.address {
+    background-color:whitesmoke;
+    text-align: right;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    width: 40%;
+}
+
+.contact {
+    background-color:whitesmoke;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    width: 60%;
+
 }
